@@ -12,12 +12,15 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Web launcher</LaunchProvider>
-    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <WebBrowserUrl>http://0.0.0.0</WebBrowserUrl>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>MerakiConnector</Name>
     <RootNamespace>MerakiConnector</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <PythonRunWebServerCommandArguments>--host=0.0.0.0</PythonRunWebServerCommandArguments>
+    <PythonDebugWebServerCommandArguments>--host=0.0.0.0</PythonDebugWebServerCommandArguments>
+    <WebBrowserPort>5555</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +32,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MerakiConnector\models\meraki_scan_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MerakiConnector\models\meraki_scan_v3_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MerakiConnector\models\room_model.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="runserver.py" />

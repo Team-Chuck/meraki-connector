@@ -176,3 +176,4 @@ def meraki_scan_from_dict(s: Any) -> MerakiScan:
 
 def meraki_scan_to_dict(x: MerakiScan) -> Any:
     return to_class(MerakiScan, x)
+
